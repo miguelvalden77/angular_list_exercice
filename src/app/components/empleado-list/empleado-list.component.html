@@ -1,0 +1,27 @@
+<app-count-empleados [data]="{mujeres: getSexo('Mujer'), hombres: getSexo('Hombre'), todos:
+    empleados.length}" (sexoRadio)="updateSexo($event)"></app-count-empleados>
+
+<section>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Sueldo</th>
+            <th>Sexo</th>
+            <th>Teléfono</th>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let empleado of empleados; let i = index">
+                <tr *ngIf="sexoSelected == 'Todos' || sexoSelected == empleado.sexo">
+                    <td>{{i + 1}}</td>
+                    <td>{{empleado.nombre}}</td>
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.sexo}}</td>
+                    <td>{{empleado.salario}}</td>
+                    <td>{{empleado.telefono}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,16 @@
+<section>
+    <label>
+        <input type="radio" name="empleados" value="Mujer" [(ngModel)]="sexoSelected" (change)="radioChange()">
+        Mujeres ({{data.mujeres}})
+    </label>
+
+    <label>
+        <input type="radio" name="empleados" value="Hombre" [(ngModel)]="sexoSelected" (change)="radioChange()">
+        Hombres ({{data.hombres}})
+    </label>
+
+    <label>
+        <input type="radio" name="empleados" value="Todos" [(ngModel)]="sexoSelected" (change)="radioChange()">
+        Todos ({{data.todos}})
+    </label>
+</section>
